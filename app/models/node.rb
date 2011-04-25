@@ -1,4 +1,5 @@
 class Node < ActiveRecord::Base
-  has_many  :post
-  has_many  :topic
+  validates_presence_of :title
+  has_many  :posts
+  has_many  :topics
 end
