@@ -82,4 +82,16 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def login
+    if request.post?
+      user = User.authenticate(params[:username], params[:password])
+      if user
+        
+        session[:user_id] = user.id
+      else
+        flash.now[:notice] = "Invalid user/password!"
+      end
+    end
+  end
 end
