@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  before_filter :authorize
   def new
     @node = Node.find(params[:node_id])
     @topic = @node.topics.build
