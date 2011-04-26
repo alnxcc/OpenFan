@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :authorize, :except => [:login, :signup, :logout]
   # GET /users
   # GET /users.xml
   def index
@@ -90,7 +91,10 @@ class UsersController < ApplicationController
         
         session[:user_id] = user.id
         session[:username] = user.username
-        redirect_to(:controller => "home", :action => "index")
+        uri = session[:original_uri]
+        session[:original_uri] = nil
+        
+        redirect_to(uri || {:controller => "home", :action => "index"})
       else
         flash.now[:notice] = "Invalid user/password!"
       end
