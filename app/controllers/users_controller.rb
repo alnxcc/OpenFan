@@ -89,9 +89,17 @@ class UsersController < ApplicationController
       if user
         
         session[:user_id] = user.id
+        session[:username] = user.username
+        redirect_to(:controller => "home", :action => "index")
       else
         flash.now[:notice] = "Invalid user/password!"
       end
     end
+  end
+  
+  def logout
+    session[:user_id] = nil
+    session[:username] = nil
+    redirect_to(:controller => "home", :action => "index")
   end
 end

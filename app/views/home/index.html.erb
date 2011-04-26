@@ -1,2 +1,12 @@
 <h1>OpenFan.net</h1>
 <p>Come back soon...</p>
+Welcome <%=h session[:username] %> <%= link_to 'Sign up', 'signup' %> <%= link_to 'Login', 'login' %> <%= link_to 'Logout', "logout"%>
+<div> &nbsp;</div>
+<% @nodes.each do |node| %>
+	<div><%= link_to node.title, node %></div>
+<%end%>
+<div> &nbsp;</div>
+<div>Topics</div>
+<% @topics.each do |topic| %>
+	<div><%=h topic.title%></div>
+<%end%>

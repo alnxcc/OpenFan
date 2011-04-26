@@ -1,0 +1,11 @@
+<h1>New Topic</h1>
+
+<% form_for([@node, @topic]) do |f|%>
+	<%= f.error_messages %>
+	
+	<%= f.label :Title%>
+	<%= f.text_field :title%>
+	<%= f.label :body%>
+	<%= f.text_area :body%>
+	<%= f.submit "Create"%>
+<%end%>

@@ -50,6 +50,11 @@ ActionController::Routing::Routes.draw do |map|
       :conditions => { :method => [:get, :post] },
       :controller => "users",
       :action     => "login"
+  map.connect 'logout',
+      :conditions => { :method => :get },
+      :controller => "users",
+      :action     => "logout"
+
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
