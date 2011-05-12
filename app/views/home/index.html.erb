@@ -1,11 +1,16 @@
 <h1>OpenFan.net</h1>
-Welcome <%=h session[:username] %> <%= link_to 'Sign up', 'signup' %> <%= link_to 'Login', 'login' %> <%= link_to 'Logout', "logout"%>
+Welcome <%= link_to_if(@user.nil?, "Login", "login") do 
+	link_to( @user.username, @user)
+	link_to('Logout', "logout") 
+	end %> <%= link_to 'Sign up', 'signup' %> 
 <div> &nbsp;</div>
+<div class="node">
+	<span>Newest Nodes</span>
 <% @nodes.each do |node| %>
-	<div><%= link_to node.title, node %></div>
+	<%= link_to node.title, node %>
 <%end%>
-<div> &nbsp;</div>
+</div>
 <div>Topics</div>
 <% @topics.each do |topic| %>
-	<div><%=h topic.title%></div>
+	<div><%=link_to topic.title, topic_path(topic)%> <%=h distance_of_time_in_words(topic.created_at, Time.now)%> by <%=h topic.user.username%></div>
 <%end%>

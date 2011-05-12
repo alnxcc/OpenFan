@@ -1,7 +1,7 @@
 <%=h @node.title%> <%= link_to 'New topic', new_node_topic_path(@node)%>
 
 <% @node.topics.each do |topic|%>
-	<div>Topic: <%= topic.title %> by <%= topic.user_id %><div>
+	<div>Topic: <%= topic.title %> by <%= topic.user.username %> at <%=h distance_of_time_in_words(topic.created_at, Time.now)%> ago<div>
 	<div>Body: <%= topic.body %>
 <%end%>
 <%= link_to 'New topic', new_node_topic_path(@node)%>
