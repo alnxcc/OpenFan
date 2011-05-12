@@ -1,6 +1,6 @@
 <%=h @topic.title%> 
 <%=h @topic.body %>
 <%@topic.posts.each do |post|%>
-	<div><%=post.body%> by <%=h post.user.username%></div>
+	<div><%=post.body%> by <%=h post.user.username%> <%=h distance_of_time_in_words(post.created_at, Time.now)%> ago</div>
 <%end%>
 <%= link_to 'New Post', new_topic_post_path(@topic)%>
