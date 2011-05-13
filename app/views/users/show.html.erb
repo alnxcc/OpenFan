@@ -12,6 +12,15 @@
   <b>Email:</b>
   <%=h @user.email %>
 </p>
+<div>Topics</div>
+<% @user.topics.each do |topic|%>
+<div><%=h topic.title%></div>
+<%end%>
+
+<div>Posts</div>
+<% @user.posts.each do |post|%>
+<div><%=h post.body%></div>
+<%end%>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
