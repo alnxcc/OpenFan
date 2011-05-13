@@ -1,16 +1,83 @@
-<h1>OpenFan.net</h1>
-Welcome <%= link_to_if(@user.nil?, "Login", "login") do 
-	link_to( @user.username, @user)
-	link_to('Logout', "logout") 
-	end %> <%= link_to 'Sign up', 'signup' %> 
-<div> &nbsp;</div>
-<div class="node">
-	<span>Newest Nodes</span>
+<div id="Top">
+	<div id="TopMain">
+		<a href="/"><span style="float: left; margin-top: 11px; margin-left: 20px; color: white;">OpenFan.net</span></a>
+		<div id="Navigation">
+			<ul>
+				<li><a href="/" class="white">asdfs</a></li>
+				<li><%link_to('Logout', "logout") %></li>
+ 				<li><%= link_to 'Sign up', 'signup' %> </li>
+			</ul>
+		</div>
+	</div>
+</div>
+	<div id="Wrapper">
+<div id="Main">
+	<div id="Sidebar">
+	</div>
+	<div id="Rightbar">
+		<div class="box">
+			<div class="cell">
+				<span class="fade">Status</span>
+			</div>
+			<div class="cell">
+				<table cellpadding="3" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td align="right" width="40%"><span class="fade">Users</span></td>
+						<td align="left"><strong><%=@users.count%></strong></td>
+					</tr>
+					<tr>
+						<td align="right" width="40%"><span class="fade">Topics</span></td>
+						<td align="left"><strong><%=@topics.count%></strong></td>
+					</tr>
+					<tr>
+						<td align="right" width="40%"><span class="fade">Posts</span></td>
+						<td align="left"><strong><%=@posts.count%></strong></td>
+					</tr>
+				</table>
+			</div>
+			<div class="inner">
+			</div>
+		</div>
+	</div>
+
+<div id="Content">
+<!--	<span>Newest Nodes</span>
 <% @nodes.each do |node| %>
 	<%= link_to node.title, node %>
 <%end%>
+-->
+<div class="box" id="topics_index">
+	<% @topics.each do |topic| %>
+<div class="cell">
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td style="padding-left: 12px" valign="top">
+				<div class="fr">
+					<a href="<%=topic_path(topic)%>" class="count_livid"><%=topic.posts.count%></a>
+				</div>
+				<div class="sep3"></div>
+					<span class="bigger" style="font-size: 16px; line-height: 130%"><%=link_to topic.title, topic_path(topic)%></span>
+				<div class="sep5"></div>
+				<span class="created"><strong><a href="<%=node_path(topic.node)%>" class="node"><%=topic.node.title%></a> &nbsp;•&nbsp; </strong><a href="<%=user_path(topic.user)%>" class="dark"><%=h topic.user.username%></a></strong> &nbsp;•&nbsp;  0 words &nbsp;•&nbsp; 0 Views &nbsp;•&nbsp; <%=h distance_of_time_in_words(topic.created_at, Time.now)%> ago replied by <a href="<%=user_path(topic.user)%>" class="dark"><%=h topic.user.username%></a></span> 
+			</td>
+		</tr>
+	</table>
 </div>
-<div>Topics</div>
-<% @topics.each do |topic| %>
-	<div><%=link_to topic.title, topic_path(topic)%> <%=h distance_of_time_in_words(topic.created_at, Time.now)%> ago by <%=h topic.user.username%></div>
 <%end%>
+</div>
+</div>
+</div>
+<div id="Bottom"> 
+<div id="BottomMain"><div class="fr" align="right" style="padding-top: 10px;">
+    </div> 
+    <strong><a href="/about" class="dark">About</a></strong> &nbsp; | &nbsp; <strong><a href="/faq" class="dark">FAQ</a></strong> &nbsp; | &nbsp; <strong><a href="/mission" class="dark">Mission</a></strong> &nbsp; | &nbsp; <strong><a href="http://www.lrccn.com/" class="dark" target="_blank">Blog</a></strong> &nbsp; | &nbsp; <strong><a href="/advertise" class="dark">Advertise</a></strong> 
+    <div class="sep10"></div> 
+    <div class="sep5"></div> 
+    <span class="fade">OpenFan.net</span> 
+    <div class="sep3"></div> 
+    <span class="fade">OpenFan.net made by <a href="http://www.lrccn.com/" target="_blank" class="dark"><strong>Jimmy Fan</strong></a></span> 
+    <div class="sep10"></div> 
+    <div class="sep5"></div> 
+    <small>VERSION: 0.0.1-dev<br />♥ Do have a faith in what you're doing.</small> 
+</div>
+</div>
