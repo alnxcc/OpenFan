@@ -29,7 +29,7 @@
 	</div>
 	<div class="sep20"></div>
 	            <div class="box"> 
-	                <div class="cell"><div class="fr"><a href="/t/11805?r=1">新回复在前</a> &nbsp;<span class="snow">|</span>&nbsp; <a href="/t/11805?f=1">只看楼主</a></div><span class="fade"><%=@topic.posts.count%> Replies &nbsp;<span class="snow">|</span>&nbsp; 直到 2011-5-13 19:09:01 PM</span></div> 
+	                <div class="cell"><div class="fr"><a href="/t/11805?r=1">Reverse Order</a> &nbsp;<span class="snow">|</span>&nbsp; <a href="/t/11805?f=1">Topic Only</a></div><span class="fade"><%=@topic.posts.count%> Replies &nbsp;<span class="snow">|</span>&nbsp;  Last Reply <%=h distance_of_time_in_words(@topic.posts.last.created_at, Time.now)%> ago</span></div> 
 	                <script type="text/javascript"> 
 	                    is_admin = ;
 
@@ -72,10 +72,3 @@
 </div>
 </div>
 </div>
-<h2>Topic: <%=h @topic.title%></h2>
-<div><%=h @topic.body %><div>
-<h3>Replies</h3>
-<%@topic.posts.each do |post|%>
-	<div class="tweet-content"><%=post.body%> by <%=h post.user.username%> <%=h distance_of_time_in_words(post.created_at, Time.now)%> ago</div>
-<%end%>
-<%= link_to 'New Post', new_topic_post_path(@topic)%>
