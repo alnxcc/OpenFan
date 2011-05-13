@@ -29,7 +29,7 @@
 	</div>
 	<div class="sep20"></div>
 	            <div class="box"> 
-	                <div class="cell"><div class="fr"><a href="/t/11805?r=1">Reverse Order</a> &nbsp;<span class="snow">|</span>&nbsp; <a href="/t/11805?f=1">Topic Only</a></div><span class="fade"><%=@topic.posts.count%> Replies &nbsp;<span class="snow">|</span>&nbsp;  Last Reply <%=h distance_of_time_in_words(@topic.posts.last.created_at, Time.now)%> ago</span></div> 
+	                <div class="cell"><div class="fr"><a href="?r=1">Reverse Order</a> &nbsp;<span class="snow">|</span>&nbsp; <a href="?f=1">Topic Only</a></div><span class="fade"><%=@topic.posts.count%> Replies &nbsp;<span class="snow">|</span>&nbsp;  Last Reply <%=h distance_of_time_in_words(@topic.posts.last.created_at, Time.now)%> ago</span></div> 
 	                <script type="text/javascript"> 
 	                    is_admin = ;
 

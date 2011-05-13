@@ -1,22 +1,122 @@
-<p>
-  <b>Username:</b>
-  <%=h @user.username %>
-</p>
+	<div id="Wrapper">
+<div id="Main">
+	<div id="Sidebar">
+	</div>
+	<div id="Rightbar">
+		<div class="box">
+			<div class="cell">
+				<span class="fade">Status</span>
+			</div>
+			<div class="cell">
+			</div>
+			<div class="inner">
+			</div>
+		</div>
+	</div>
 
-<p>
-  <b>Email:</b>
-  <%=h @user.email %>
-</p>
-<div>Topics</div>
-<% @user.topics.each do |topic|%>
-<div><%=h topic.title%></div>
-<%end%>
-
-<div>Posts</div>
-<% @user.posts.each do |post|%>
-<div><%=h post.body%></div>
-<%end%>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+   <div id="Content"> 
+        
+        <div class="box"><div class="cell"> 
+            <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
+                <tr> 
+                    <td width="73" valign="top" align="center"><img src="http://www.gravatar.com/avatar/<%=Digest::MD5.hexdigest(@user.email)%>?s=73" border="0" /> 
+                        
+                        
+                        
+                    </td> 
+                    <td width="10" valign="top"></td> 
+                    <td width="auto" align="left" valign="top"><h2 style="padding: 0px; margin: 0px; font-size: 22px; line-height: 22px;"><%=@user.username%></h2> 
+                        
+                        <div class="sep5"></div> 
+                        <span class="fade bigger">RoR,Nginx</span> 
+                        
+                        <div class="sep5"></div> 
+                        <span class="snow">OpenFan.net User no. <%=@user.id%> at <%=@user.created_at%></span> 
+                        <div class="sep10"></div> 
+                        <table cellpadding="2" cellspacing="0" border="0" width="100%"> 
+                            <tr> 
+                                <td width="50%"> 
+                                <span style="line-height: 16px;"><img src="http://v2ex.com/static/img/twitter.png" align="absmiddle" /> &nbsp;<a href="http://twitter.com/fanminjian">@fanminjian</a></span> 
+                                
+                                </td> 
+                                <td width="50%"><span style="line-height: 16px;"><img src="http://v2ex.com/static/img/heart.png" align="absmiddle" /> &nbsp;0 followers</span></td> 
+                            </tr> 
+                            <tr> 
+                                <td width="50%"> 
+                                <span style="line-height: 16px;"><img src="http://v2ex.com/static/img/mobileme.png" align="absmiddle" /> &nbsp;<a href="http://www.lrccn.com" target="_blank" rel="nofollow external">http://www.lrccn.com</a></span> 
+                                
+                                </td> 
+                                <td width="50%"></td> 
+                            </tr> 
+                            <tr> 
+                                <td width="50%"> 
+                                <span style="line-height: 16px;"><img src="http://v2ex.com/static/img/location.png" align="absmiddle" /> &nbsp;<a href="http://www.google.com/maps?q=Melbourne" target="_blank" rel="nofollow external">Melbourne</a></span> 
+                                </td> 
+                                <td width="50%"></td> 
+                            </tr> 
+                            <tr> 
+                                <td width="50%"></td> 
+                                <td width="50%"></td> 
+                            </tr> 
+                            
+                        </table> 
+                        
+                    </td> 
+                </tr> 
+            </table> 
+            </div> 
+            
+            
+            <div class="inner"> 
+                Description.
+            </div> 
+            
+        </div> 
+        <div class="sep20"></div> 
+        <div class="box"> 
+            <div class="cell"><span class="fade">New Topics</span></div> 
+            <div class="inner"> 
+                <table cellpadding="5" cellspacing="0" border="0" width="100%" class="topics"> 
+                    <tr> 
+                        <th align="right" width="50">Replies</td> 
+                        <th align="left" width="auto">Title</td> 
+                        <th align="left" width="200" colspan="2">Last Update</td> 
+                    </tr> 
+<% @user.topics.each do |topic|%>                    
+                    <tr> 
+                        <td align="right" width="50" class="odd lend"><strong><span class="green"><!--class=snow--><%=topic.posts.count%></span></strong></td> 
+                        <td align="left" width="auto" class="odd"><a href="<%=topic_path(topic)%>"><%=topic.title%></a></td> 
+                        <td align="left" width="80" class="odd"><a href="#" class="dark"><%=topic.posts.last%></a></td> 
+                        <td align="left" width="110" class="odd rend"><small class="fade"><%=topic.created_at%></small></td> 
+                    </tr> 
+<%end%>                    
+                </table> 
+            </div> 
+        </div> 
+        
+        <div class="sep20"></div> 
+        <div class="box"> 
+            <div class="cell"><span class="fade">New Posts</span></div> 
+            <div class="inner"> 
+                <table cellpadding="5" cellspacing="0" border="0" width="100%" class="topics"> 
+                    <tr> 
+                        <th align="right" width="50">Replies</td> 
+                        <th align="left" width="auto">Title</td> 
+                        <th align="left" width="200" colspan="2">Last Update</td> 
+                    </tr> 
+<%@user.posts.each do |post|%>
+                    <tr> 
+                        <td align="right" width="50" class="odd lend"><strong><span class="green"><%=post.topic.posts.count%></span></strong></td> 
+                        <td align="left" width="auto" class="odd"><a href="<%=topic_path(post.topic)%>"><%=post.topic.title%></a></td> 
+                        <td align="left" width="80" class="odd"><a href="<%=user_path(post.topic.user)%>" class="dark"><%=post.topic.user.username%></a></td> 
+                        <td align="left" width="110" class="odd rend"><small class="fade"><%=post.topic.user.created_at%></small></td> 
+                    </tr> 
+<%end%>             
+                </table> 
+            </div> 
+        </div> 
+        
+    </div> 
+<div class="c"></div> 
+</div> 
+</div>
