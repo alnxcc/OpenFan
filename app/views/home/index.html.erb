@@ -14,8 +14,3 @@ Welcome <%= link_to_if(@user.nil?, "Login", "login") do
 <% @topics.each do |topic| %>
 	<div><%=link_to topic.title, topic_path(topic)%> <%=h distance_of_time_in_words(topic.created_at, Time.now)%> ago by <%=h topic.user.username%></div>
 <%end%>
-
-<div>Posts</div>
-<% @posts.each do |post|%>
-<div><%= link_to post.body, topic_path(post.topic)%></div>
-	<%end%>
