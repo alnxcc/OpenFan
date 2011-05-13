@@ -1,7 +1,53 @@
-<%=h @node.title%> <%= link_to 'New topic', new_node_topic_path(@node)%>
+	<div id="Wrapper">
+<div id="Main">
+	<div id="Sidebar">
+	</div>
+	<div id="Rightbar">
+		<div class="box">
+			<div class="cell">
+				<span class="fade">Status</span>
+			</div>
+			<div class="cell">
+			</div>
+			<div class="inner">
+			</div>
+		</div>
+	</div>
 
+	 <div id="Content"> 
+	            <div class="box"> 
+	                <div class="cell" style="padding-bottom: 0px;"><table cellpadding="0" cellspacing="0" border="0" width="100%"> 
+	                <tr> 
+
+	                    <td width="auto" valign="top"><div class="fr" align="right"><span class="snow">主题总数</span> <span class="fade"><strong>82</strong></span></div> 
+	                    <span class="bigger"><a href="/">OpenFan.net</a> <span class="chevron">&nbsp;›&nbsp;</span><%=@node.title%></span> 
+
+
+	                    </td> 
+	                </tr> 
+	                </table> 
+	                </div> 
 <% @node.topics.each do |topic|%>
-	<div>Topic: <%= topic.title %> by <%= topic.user.username %> at <%=h distance_of_time_in_words(topic.created_at, Time.now)%> ago<div>
-	<div>Body: <%= topic.body %>
-<%end%>
-<%= link_to 'New topic', new_node_topic_path(@node)%>
+	<div class="cell from_8523"> 
+	<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr> 
+		<td valign="top" class="avatar"><a href="<%= user_path(topic.user)%>"><img src="http://www.gravatar.com/avatar/<%=Digest::MD5.hexdigest(topic.user.email)%>?s=48" border="0" /></a></td> 
+		<td style="padding-left: 12px" valign="top"> 
+
+		        <div class="fr"> 
+
+		                <a href="/t/12741#reply6" class="count_livid"><%=topic.posts.count%></a> 
+
+		        </div> 
+
+		    <div class="sep3"></div> 
+			<span class="bigger" style="font-size: 16px; line-height: 130%;"><a href="<%=topic_path(topic)%>"><%=topic.title%></a></span> 
+			<div class="sep5"></div> 
+	        <span class="created"><strong><a href="<%= user_path(topic.user)%>" class="dark"><%=topic.user.username%></a></strong> &nbsp;•&nbsp; <%=topic.body.length%> words &nbsp;•&nbsp; 0 hits &nbsp;•&nbsp; <%=h distance_of_time_in_words(topic.created_at, Time.now)%> ago replied by <a href="/member/reus" class="dark"><%post = topic.posts.last%></a></span> 
+		</td> 
+		</tr> 
+	</table> 
+	</div>
+	<%end%>
+	<div class="c"></div>
+	</div>
+	</div>
