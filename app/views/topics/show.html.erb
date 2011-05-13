@@ -27,6 +27,7 @@
 		<div class="content topic_content"><%=@topic.body%></div>
 	</div>
 	</div>
+	<%if @topic.posts.count > 0%>
 	<div class="sep20"></div>
 	            <div class="box"> 
 	                <div class="cell"><div class="fr"><a href="?r=1">Reverse Order</a> &nbsp;<span class="snow">|</span>&nbsp; <a href="?f=1">Topic Only</a></div><span class="fade"><%=@topic.posts.count%> Replies &nbsp;<span class="snow">|</span>&nbsp;  Last Reply <%=h distance_of_time_in_words(@topic.posts.last.created_at, Time.now)%> ago</span></div> 
@@ -38,8 +39,7 @@
 	                    replies_keys = new Array(); replies_ids = new Array(); replies_parents = new Array();
 	                </script> 
 	                <div id="replies"> 
-
-<% @topic.posts.each do |post|%>
+<%@topic.posts.each do |post|%>
 
 	    <div class="cell reply from_4111"> 
 
@@ -66,6 +66,7 @@
 
 	    </script> 
 	</div>
+		<%end%>
 		<%end%>
 	</div>
 
