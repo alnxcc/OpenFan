@@ -4,7 +4,7 @@
 		<div id="Navigation">
 			<ul>
 				<li><a href="/" class="white">Home</a></li>
-				<li><%link_to('Logout', "logout") %></li>
+				<li><%=link_to('Logout', "logout") %></li>
  				<li><%= link_to 'Sign up', 'signup' %> </li>
 			</ul>
 		</div>
@@ -58,7 +58,7 @@
 				<div class="sep3"></div>
 					<span class="bigger" style="font-size: 16px; line-height: 130%"><%=link_to topic.title, topic_path(topic)%></span>
 				<div class="sep5"></div>
-				<span class="created"><strong><a href="<%=node_path(topic.node)%>" class="node"><%=topic.node.title%></a> &nbsp;•&nbsp; </strong><a href="<%=user_path(topic.user)%>" class="dark"><%=h topic.user.username%></a></strong> &nbsp;•&nbsp;  0 words &nbsp;•&nbsp; 0 Views &nbsp;•&nbsp; <%=h distance_of_time_in_words(topic.created_at, Time.now)%> ago replied by <a href="<%=user_path(topic.user)%>" class="dark"><%=h topic.user.username%></a></span> 
+				<span class="created"><strong><a href="<%=node_path(topic.node)%>" class="node"><%=topic.node.title%></a> &nbsp;•&nbsp; </strong><a href="<%=user_path(topic.user)%>" class="dark"><%=h topic.user.username%></a></strong> &nbsp;•&nbsp;  <%=topic.body.length%> words &nbsp;•&nbsp; 0 Views &nbsp;•&nbsp; <%=h distance_of_time_in_words(topic.created_at, Time.now)%> ago replied by <a href="<%=user_path(topic.user)%>" class="dark"><%=h topic.user.username%></a></span> 
 			</td>
 		</tr>
 	</table>
