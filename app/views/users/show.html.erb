@@ -31,7 +31,7 @@
                         <span class="fade bigger">RoR,Nginx</span> 
                         
                         <div class="sep5"></div> 
-                        <span class="snow">OpenFan.net User no. <%=@user.id%> at <%=@user.created_at%></span> 
+                        <span class="snow">OpenFan.net User no. <%=@user.id%> at <%=@user.created_at.ctime%></span> 
                         <div class="sep10"></div> 
                         <table cellpadding="2" cellspacing="0" border="0" width="100%"> 
                             <tr> 
@@ -87,7 +87,7 @@
                         <td align="right" width="50" class="odd lend"><strong><span class="green"><!--class=snow--><%=topic.posts.count%></span></strong></td> 
                         <td align="left" width="auto" class="odd"><a href="<%=topic_path(topic)%>"><%=topic.title%></a></td> 
                         <td align="left" width="80" class="odd"><a href="#" class="dark"><%=topic.posts.last%></a></td> 
-                        <td align="left" width="110" class="odd rend"><small class="fade"><%=topic.created_at%></small></td> 
+                        <td align="left" width="110" class="odd rend"><small class="fade"><%=topic.created_at.ctime%></small></td> 
                     </tr> 
 <%end%>                    
                 </table> 
@@ -109,7 +109,7 @@
                         <td align="right" width="50" class="odd lend"><strong><span class="green"><%=post.topic.posts.count%></span></strong></td> 
                         <td align="left" width="auto" class="odd"><a href="<%=topic_path(post.topic)%>"><%=post.topic.title%></a></td> 
                         <td align="left" width="80" class="odd"><a href="<%=user_path(post.topic.user)%>" class="dark"><%=post.topic.user.username%></a></td> 
-                        <td align="left" width="110" class="odd rend"><small class="fade"><%=post.topic.user.created_at%></small></td> 
+                        <td align="left" width="110" class="odd rend"><small class="fade"><%=post.topic.user.created_at.ctime%></small></td> 
                     </tr> 
 <%end%>             
                 </table> 
