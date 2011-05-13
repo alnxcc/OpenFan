@@ -1,5 +1,6 @@
-<%=h @topic.title%> 
-<%=h @topic.body %>
+<h2>Topic: <%=h @topic.title%></h2>
+<div><%=h @topic.body %><div>
+<h3>Replies</h3>
 <%@topic.posts.each do |post|%>
 	<div><%=post.body%> by <%=h post.user.username%> <%=h distance_of_time_in_words(post.created_at, Time.now)%> ago</div>
 <%end%>
