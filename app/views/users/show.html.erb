@@ -83,12 +83,13 @@
                         <th align="left" width="200" colspan="2">Last Update</td> 
                     </tr> 
 <% @user.topics.each do |topic|%>                    
-                    <tr> 
-                        <td align="right" width="50" class="odd lend"><strong><span class="green"><!--class=snow--><%=topic.posts.count%></span></strong></td> 
-                        <td align="left" width="auto" class="odd"><a href="<%=topic_path(topic)%>"><%=topic.title%></a></td> 
-                        <td align="left" width="80" class="odd"><a href="#" class="dark"><%=topic.posts.last%></a></td> 
-                        <td align="left" width="110" class="odd rend"><small class="fade"><%=topic.created_at.ctime%></small></td> 
-                    </tr> 
+                    <tr> <%@count = cycle "odd", "even"%>
+                        <td align="right" width="50" class="<%=@count%> lend"><strong><span class="green"><!--class=snow--><%=topic.posts.count%></span></strong></td> 
+                        <td align="left" width="auto" class="<%=@count%>"><a href="<%=topic_path(topic)%>"><%=topic.title%></a></td> 
+                        <td align="left" width="80" class="<%=@count%>"><a href="#" class="dark"><%=topic.posts.last%></a></td> 
+                        <td align="left" width="110" class="<%=@count%> rend"><small class="fade"><%=topic.created_at.ctime%></small></td> 
+                    </tr>
+ 
 <%end%>                    
                 </table> 
             </div> 
@@ -105,11 +106,12 @@
                         <th align="left" width="200" colspan="2">Last Update</td> 
                     </tr> 
 <%@user.posts.each do |post|%>
+<%@count = cycle "odd", "even"%>
                     <tr> 
-                        <td align="right" width="50" class="odd lend"><strong><span class="green"><%=post.topic.posts.count%></span></strong></td> 
-                        <td align="left" width="auto" class="odd"><a href="<%=topic_path(post.topic)%>"><%=post.topic.title%></a></td> 
-                        <td align="left" width="80" class="odd"><a href="<%=user_path(post.topic.user)%>" class="dark"><%=post.topic.user.username%></a></td> 
-                        <td align="left" width="110" class="odd rend"><small class="fade"><%=post.topic.user.created_at.ctime%></small></td> 
+                        <td align="right" width="50" class="<%=@count%> lend"><strong><span class="green"><%=post.topic.posts.count%></span></strong></td> 
+                        <td align="left" width="auto" class="<%=@count%>"><a href="<%=topic_path(post.topic)%>"><%=post.topic.title%></a></td> 
+                        <td align="left" width="80" class="<%=@count%>"><a href="<%=user_path(post.topic.user)%>" class="dark"><%=post.topic.user.username%></a></td> 
+                        <td align="left" width="110" class="<%=@count%> rend"><small class="fade"><%=post.topic.user.created_at.ctime%></small></td> 
                     </tr> 
 <%end%>             
                 </table> 
