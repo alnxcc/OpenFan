@@ -3,6 +3,7 @@ class NodesController < ApplicationController
   def show
     @node = Node.find(params[:id])
     @user = User.find_by_id(session[:user_id])
+    @title = @node.title
   end
   
   def new

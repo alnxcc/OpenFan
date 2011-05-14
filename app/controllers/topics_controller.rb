@@ -26,6 +26,7 @@ class TopicsController < ApplicationController
     @user = User.find_by_id(session[:user_id])
     #@node = Node.find(params[:node_id])
     @topic = Topic.find(params[:id])
+    @title = @topic.title
     #= @topic.posts.build
   end
 end

@@ -5,6 +5,7 @@ class HomeController < ApplicationController
     @users = User.all
     @topics = Topic.all(:order => "updated_at DESC")
     @posts = Post.all
+    @title="Home"
   end
 
 end
