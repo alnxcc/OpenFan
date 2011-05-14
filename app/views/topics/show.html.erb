@@ -72,6 +72,7 @@
 	
 </div>
 	<%end%>
+		<%if session[:user_id]%>
 <div class="sep20"></div>
 <div class="box"><% form_for([@topic, @topic.posts.build]) do |f|%>
                 <div class="cell"><div class="fr fade">⬆ <a href="#_top" class="dark">Top</a></div> 
@@ -87,6 +88,7 @@
                 
                 <div class="inner"><span style="line-height: 200%; font-size: 120%">...</span></div> 
             </div>
+<%end%>
 </div>
 
 </div>
