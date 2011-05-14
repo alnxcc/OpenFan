@@ -2,6 +2,7 @@ class NodesController < ApplicationController
   before_filter :authorize, :only => [:new]
   def show
     @node = Node.find(params[:id])
+    @user = User.find_by_id(session[:user_id])
   end
   
   def new
