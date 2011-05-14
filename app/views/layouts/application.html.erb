@@ -16,8 +16,13 @@
 		<div id="Navigation">
 			<ul>
 				<li><a href="/" class="white">Home</a></li>
+				<%if session[:user_id]%>
+				<li><%=link_to @user.username, user_path(@user)%></li>
 				<li><%=link_to('Logout', "/logout") %></li>
- 				<li><%= link_to 'Sign up', '/signup' %> </li>
+				<%else%>
+				<li><%=link_to 'Login', '/login'%></li>
+				 <li><%= link_to 'Sign up', '/signup' %> </li>
+				<%end%>
 			</ul>
 		</div>
 	</div>
