@@ -24,7 +24,7 @@
         <small class="fade">By <a href="<%=user_path(@topic.user)%>" class="dark"><%=@topic.user.username%></a> at <%=h distance_of_time_in_words(@topic.created_at, Time.now)%> ago, 0 hits</small>
 	</div>
 	<div class="inner">
-		<div class="content topic_content"><%=@topic.body%></div>
+		<div class="content topic_content"><%=simple_format @topic.body%></div>
 	</div>
 	</div>
 	<%if @topic.posts.count > 0%>
@@ -55,7 +55,7 @@
 	                <div class="sep3"></div> 
 	                <strong><a href="<%=user_path(post.user)%>" class="dark"><%=h post.user.username%></a></strong> 
 	                <div class="sep5"></div> 
-	                <div class="content reply_content"><%=h post.body%></div> 
+	                <div class="content reply_content"><%=simple_format post.body%></div> 
 	            </td> 
 	    </table> 
 	    <script> 
