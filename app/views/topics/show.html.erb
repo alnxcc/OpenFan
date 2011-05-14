@@ -67,9 +67,26 @@
 	    </script> 
 	</div>
 		<%end%>
-		<%end%>
-	</div>
 
+	</div>
+	
 </div>
+	<%end%>
+<div class="sep20"></div>
+<div class="box"><% form_for([@topic, @topic.posts.build]) do |f|%>
+                <div class="cell"><div class="fr fade">⬆ <a href="#_top" class="dark">Top</a></div> 
+                <span class="fade">Add a reply</span> 
+                
+                </div> 
+                <div class="cell"> 
+					<%= f.text_area :body, :class=>"mll"%>
+                    <div class="sep10"></div> 
+                    <div class="fr fade" id="e"></div> 
+                    <input type="submit" class="super normal button" value="Reply" /> 
+                </div> <%end%>
+                
+                <div class="inner"><span style="line-height: 200%; font-size: 120%">...</span></div> 
+            </div>
 </div>
+
 </div>

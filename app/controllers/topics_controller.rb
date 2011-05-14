@@ -25,5 +25,6 @@ class TopicsController < ApplicationController
   def show
     #@node = Node.find(params[:node_id])
     @topic = Topic.find(params[:id])
+    #= @topic.posts.build
   end
 end

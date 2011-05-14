@@ -1,7 +1,79 @@
-<% form_tag do %>
-	<label for="username">Username</label>
-	<%= text_field_tag :username, params[:username]%>
-	<label for="password">Password</label>
-	<%= password_field_tag :password, params[:password]%>
-	<%=submit_tag "Login" %>
+    <div id="Wrapper"> 
+    <div id="Main"> 
+        <div id="Sidebar">   
+        </div> 
+        <div id="Rightbar"> 
+            <div class="box"> 
+    
+    <div class="cell"> 
+        <strong>Status</strong> 
+        
+        <div class="sep5"></div> 
+        <span class="fade"></span> 
+        
+    </div> 
+    <div class="inner"> 
+        <div class="sep5"></div> 
+        <div align="center"><a href="/signup" class="super normal button">Sign Up</a> 
+        <div class="sep5"></div> 
+        <div class="sep10"></div> 
+        Got Account? <a href="/signin">Sign In</a></div> 
+    </div> 
+    
+</div> 
+        </div> 
+        <div id="Content"> 
+            <div class="box"> 
+                <div class="cell"><span class="fade"><a href="/">OpenFan.net</a> <span class="chevron">&nbsp;›&nbsp;</span>Sign In</span></div> 
+                <div class="inner"> 
+	<% form_tag do %>
+        			
+        			<strong><%= flash[:notice] %></strong> 
+        			<div class="sep10"></div> 
+        			
+        			<table cellpadding="5" cellspacing="0" border="0"> 
+        			    <tr> 
+        			        <td width="80" align="right"> 
+        			            Username
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			           <%= text_field_tag :username, params[:username], :class=>"sl"%> 
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td width="80" align="right"> 
+        			            Password
+        			        </td> 
+        			        <td width="200" align="left"> 
+		<%= password_field_tag :password, params[:password], :class=>"sl"%>
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td width="80" align="right"> 
+        			        </td> 
+        			        <td width="200" align="left"> 
+	<%=submit_tag "Login", :class=>"super normal button" %>
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td width="80" align="right"> 
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <span class="fade">Cookies needed.</span> 
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td width="80" align="right"> 
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <span class="fade"><a href="/forgot">Forgot Password?</a></span> 
+        			        </td> 
+        			    </tr> 
+        			</table> 
 <%end%>
+                </div> 
+            </div> 
+        </div> 
+    <div class="c"></div> 
+    </div> 
+    </div>

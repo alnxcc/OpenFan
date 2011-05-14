@@ -48,6 +48,20 @@
 	</table> 
 	</div>
 	<%end%>
+	</div>
+	<div class="sep20"></div> 
+    <div class="box"> 
+        <div class="inner"> 
+			<% form_for([@node, @node.topics.build]) do |f|%>
+			<%= f.text_field :title, :class=>"sll"%>
+            <div class="sep10"></div> 
+			<%= f.text_area :body, :class=>"mll"%>
+            <div class="sep10"></div> 
+			<%= f.submit "Create", :class=>"super normal button"%>
+            </form> 
+			<%end%>
+        </div> 
+    </div>
 	<div class="c"></div>
 	</div>
 	</div>

@@ -1,27 +1,95 @@
-<h1>New user</h1>
-
+    <div id="Wrapper"> 
+    <div id="Main"> 
+        <div id="Sidebar">   
+        </div> 
+        <div id="Rightbar"> 
+            <div class="box"> 
+    
+    <div class="cell"> 
+        <strong>Status</strong> 
+        
+        <div class="sep5"></div> 
+        <span class="fade"></span> 
+        
+    </div> 
+    <div class="inner"> 
+        <div class="sep5"></div> 
+        <div align="center"><a href="/signup" class="super normal button">Sign Up</a> 
+        <div class="sep5"></div> 
+        <div class="sep10"></div> 
+        Got Account? <a href="/signin">Sign In</a></div> 
+    </div> 
+    
+</div> 
+        </div> 
+        <div id="Content"> 
+            <div class="box"> 
+                <div class="cell"><span class="fade"><a href="/">OpenFan.net</a> <span class="chevron">&nbsp;›&nbsp;</span>Sign Up</span></div> 
+                <div class="inner"> 
 <% form_for(@user) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.text_field :plainpassword %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %><br />
-    <%= f.text_field :plainpassword_confirmation %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', users_path %>
+        			
+        			<strong><%= f.error_messages %></strong> 
+        			<div class="sep10"></div> 
+        			
+        			<table cellpadding="5" cellspacing="0" border="0"> 
+        			    <tr> 
+        			        <td width="80" align="right"> 
+        			            Username
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			           <%= f.text_field :username, :class=>"sl" %>
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td width="80" align="right"> 
+        			            Password
+        			        </td> 
+        			        <td width="200" align="left"> 
+		<%= f.password_field :plainpassword, :class=>"sl" %>
+        			        </td> 
+        			    </tr>
+						<tr>
+							<td width="80" align="right">
+								Confirm
+							</td>
+							<td width="200" align="left">
+								<%= f.password_field :plainpassword_confirmation , :class=>"sl"%>
+							</td>
+						</tr>
+						<tr>
+							<td width="80" align="right">
+								Email
+							</td>
+							<td width="200" align="left">
+								<%= f.text_field :email, :class=>"sl" %>
+							</td>
+						</tr>
+        			    <tr> 
+        			        <td width="80" align="right"> 
+        			        </td> 
+        			        <td width="200" align="left"> 
+	<%= f.submit 'Create', :class=>"super normal button" %>
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td width="80" align="right"> 
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <span class="fade">Cookies needed.</span> 
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td width="80" align="right"> 
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <span class="fade"><a href="/forgot">Forgot Password?</a></span> 
+        			        </td> 
+        			    </tr> 
+        			</table> 
+<%end%>
+                </div> 
+            </div> 
+        </div> 
+    <div class="c"></div> 
+    </div> 
+    </div>
