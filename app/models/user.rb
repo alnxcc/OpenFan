@@ -1,13 +1,14 @@
 class User < ActiveRecord::Base
-  validates_presence_of :username, :plainpassword, :email
+  validates_presence_of :username, :email
+  validates_presence_of :plainpassword, :on => :create
   validates_uniqueness_of :username
   validates_length_of   :username, :in => 3..12
-  validates_length_of   :plainpassword, :in => 3..12
+  validates_length_of   :plainpassword, :in => 3..12, :on => :create
   has_many  :topics
   has_many  :posts
   
   attr_accessor :plainpassword
-  validates_confirmation_of :plainpassword
+  validates_confirmation_of :plainpassword, :on => :create
   
   def plainpassword_confirmation
     @plainpassword_confirmation

@@ -54,6 +54,10 @@ ActionController::Routing::Routes.draw do |map|
       :conditions => { :method => :get },
       :controller => "users",
       :action     => "logout"
+  map.connect 'setting',
+      :conditions => { :method => :get },
+      :controller => "users",
+      :action     => "setting"
 
 
   map.connect ':controller/:action/:id'

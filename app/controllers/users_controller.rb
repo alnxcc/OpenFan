@@ -106,4 +106,9 @@ class UsersController < ApplicationController
     session[:username] = nil
     redirect_to(:controller => "home", :action => "index")
   end
+  
+  def setting
+    @user = User.find_by_id(session[:user_id])
+    @title = "Setting"
+  end
 end

@@ -18,6 +18,7 @@
 				<li><a href="/" class="white">Home</a></li>
 				<%if session[:user_id]%>
 				<li><%=link_to @user.username, user_path(@user)%></li>
+				<li><%=link_to "Setting", "/setting"%></li>
 				<li><%=link_to('Logout', "/logout") %></li>
 				<%else%>
 				<li><%=link_to 'Login', '/login'%></li>
