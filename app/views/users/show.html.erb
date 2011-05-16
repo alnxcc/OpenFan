@@ -86,8 +86,8 @@
                     <tr> <%@count = cycle "odd", "even"%>
                         <td align="right" width="50" class="<%=@count%> lend"><strong><span class="green"><!--class=snow--><%=topic.posts.count%></span></strong></td> 
                         <td align="left" width="auto" class="<%=@count%>"><a href="<%=topic_path(topic)%>"><%=topic.title%></a></td> 
-                        <td align="left" width="80" class="<%=@count%>"><%if topic.posts.last%><a href="<%=user_path(topic.posts.last.user)%>" class="dark"><%=topic.posts.last.user.username%></a><%end%></td> 
-                        <td align="left" width="110" class="<%=@count%> rend"><%if topic.posts.last%><small class="fade"><%=topic.posts.last.created_at.ctime%></small><%end%></td> 
+                        <td align="left" width="80" class="<%=@count%>"><%if topic.posts.last%><a href="<%=user_path(topic.posts.last.user)%>" class="dark"><%=topic.posts.last.user.username%><%else%><a href="<%=user_path(topic.user)%>" class="dark"><%=topic.user.username%><%end%></a></td> 
+                        <td align="left" width="110" class="<%=@count%> rend"><small class="fade"><%if topic.posts.last%><%=topic.posts.last.created_at.ctime%><%else%><%=topic.created_at.ctime%><%end%></small></td> 
                     </tr>
  
 <%end%>                    
@@ -110,8 +110,8 @@
                     <tr> 
                         <td align="right" width="50" class="<%=@count%> lend"><strong><span class="green"><%=post.topic.posts.count%></span></strong></td> 
                         <td align="left" width="auto" class="<%=@count%>"><a href="<%=topic_path(post.topic)%>"><%=post.topic.title%></a></td> 
-                        <td align="left" width="80" class="<%=@count%>"><%if post.topic.posts.last%><a href="<%=user_path(post.topic.posts.last.user)%>" class="dark"><%=post.topic.posts.last.user.username%><%end%></a></td> 
-                        <td align="left" width="110" class="<%=@count%> rend"><%if post.topic.posts.last%><small class="fade"><%=post.topic.posts.last.created_at.ctime%></small><%end%></td> 
+                        <td align="left" width="80" class="<%=@count%>"><%if post.topic.posts.last%><a href="<%=user_path(post.topic.posts.last.user)%>" class="dark"><%=post.topic.posts.last.user.username%><%else%><a href="<%=user_path(post.topic.user)%>" class="dark"><%=post.topic.user.username%></a><%end%></td> 
+                        <td align="left" width="110" class="<%=@count%> rend"><small class="fade"><%if post.topic.posts.last%><%=post.topic.posts.last.created_at.ctime%><%else%><%=post.topic.created_at.ctime%><%end%></small></td> 
                     </tr> 
 <%end%>             
                 </table> 
