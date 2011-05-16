@@ -27,7 +27,7 @@
 	                </tr> 
 	                </table> 
 	                </div> 
-<% @node.topics.reverse.each do |topic|%>
+<% @node.topics.each do |topic|%>
 	<div class="cell from_8523"> 
 	<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr> 
 		<td valign="top" class="avatar"><a href="<%= user_path(topic.user)%>"><img src="http://www.gravatar.com/avatar/<%=Digest::MD5.hexdigest(topic.user.email)%>?s=48" border="0" /></a></td> 
