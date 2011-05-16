@@ -36,21 +36,21 @@
                         <table cellpadding="2" cellspacing="0" border="0" width="100%"> 
                             <tr> 
                                 <td width="50%"> 
-                                <span style="line-height: 16px;"><img src="http://v2ex.com/static/img/twitter.png" align="absmiddle" /> &nbsp;<a href="http://twitter.com/fanminjian">@fanminjian</a></span> 
+                                <span style="line-height: 16px;"><img src="http://v2ex.com/static/img/twitter.png" align="absmiddle" /> &nbsp;<a href="http://twitter.com/<%=@user.twitter%>">@<%=@user.twitter%></a></span> 
                                 
                                 </td> 
                                 <td width="50%"><span style="line-height: 16px;"><img src="http://v2ex.com/static/img/heart.png" align="absmiddle" /> &nbsp;0 followers</span></td> 
                             </tr> 
                             <tr> 
                                 <td width="50%"> 
-                                <span style="line-height: 16px;"><img src="http://v2ex.com/static/img/mobileme.png" align="absmiddle" /> &nbsp;<a href="http://www.lrccn.com" target="_blank" rel="nofollow external">http://www.lrccn.com</a></span> 
+                                <span style="line-height: 16px;"><img src="http://v2ex.com/static/img/mobileme.png" align="absmiddle" /> &nbsp;<a href="<%=@user.website%>" target="_blank" rel="nofollow external"><%=@user.website%></a></span> 
                                 
                                 </td> 
                                 <td width="50%"></td> 
                             </tr> 
                             <tr> 
                                 <td width="50%"> 
-                                <span style="line-height: 16px;"><img src="http://v2ex.com/static/img/location.png" align="absmiddle" /> &nbsp;<a href="http://www.google.com/maps?q=Melbourne" target="_blank" rel="nofollow external">Melbourne</a></span> 
+                                <span style="line-height: 16px;"><img src="http://v2ex.com/static/img/location.png" align="absmiddle" /> &nbsp;<a href="http://www.google.com/maps?q=<%=@user.location%>" target="_blank" rel="nofollow external"><%=@user.location%></a></span> 
                                 </td> 
                                 <td width="50%"></td> 
                             </tr> 
@@ -68,7 +68,7 @@
             
             
             <div class="inner"> 
-                Description.
+                <%=simple_format @user.description%>
             </div> 
             
         </div> 
