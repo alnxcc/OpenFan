@@ -34,9 +34,9 @@
 		<td style="padding-left: 12px" valign="top"> 
 
 		        <div class="fr"> 
-
-		                <a href="/t/12741#reply6" class="count_livid"><%=topic.posts.count%></a> 
-
+					<%if topic.posts.count >0%>
+		                <a href="<%=topic_path(topic)%>" class="count_livid"><%=topic.posts.count%></a> 
+						<%end%>
 		        </div> 
 
 		    <div class="sep3"></div> 
