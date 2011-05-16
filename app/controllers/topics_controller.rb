@@ -27,6 +27,9 @@ class TopicsController < ApplicationController
     #@node = Node.find(params[:node_id])
     @topic = Topic.find(params[:id])
     @title = @topic.title
+    # add up views
+    @topic.views = @topic.views + 1
+    @topic.save
     #= @topic.posts.build
   end
 end

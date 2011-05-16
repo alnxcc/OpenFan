@@ -42,7 +42,7 @@
 		    <div class="sep3"></div> 
 			<span class="bigger" style="font-size: 16px; line-height: 130%;"><a href="<%=topic_path(topic)%>"><%=topic.title%></a></span> 
 			<div class="sep5"></div> 
-	        <span class="created"><strong><a href="<%= user_path(topic.user)%>" class="dark"><%=topic.user.username%></a></strong> &nbsp;•&nbsp; <%=topic.body.jsize%> words &nbsp;•&nbsp; 0 hits &nbsp;•&nbsp; <%=h distance_of_time_in_words(topic.created_at, Time.now)%> ago replied by <a href="/member/reus" class="dark"><%post = topic.posts.last%></a></span> 
+	        <span class="created"><strong><a href="<%= user_path(topic.user)%>" class="dark"><%=topic.user.username%></a></strong> &nbsp;•&nbsp; <%=topic.body.jsize%> words &nbsp;•&nbsp; <%=topic.views%> views &nbsp;•&nbsp; <%=h distance_of_time_in_words(topic.created_at, Time.now)%> ago replied by <a href="/member/reus" class="dark"><%post = topic.posts.last%></a></span> 
 		</td> 
 		</tr> 
 	</table> 
