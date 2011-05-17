@@ -39,6 +39,7 @@
 	                    replies_keys = new Array(); replies_ids = new Array(); replies_parents = new Array();
 	                </script> 
 	                <div id="replies"> 
+		<%count = 1%>
 <%@topic.posts.each do |post|%>
 
 	    <div class="cell reply from_4111"> 
@@ -50,7 +51,7 @@
 	            <td width="10"></td> 
 	            <td width="auto" valign="top"> 
 													<div class="fr" id="reply_91156_buttons"> 
-														<strong><small class="snow">#1 - <%=h distance_of_time_in_words(post.created_at, Time.now)%> ago &nbsp; <img src="/images/reply.png" align="absmiddle" border="0" alt="回复 xi4oh4o" onclick="replyOne('xi4oh4o')" class="clickable" /><span class="ops"></span></small></strong> 
+														<strong><small class="snow">#<%=count%> - <%=h distance_of_time_in_words(post.created_at, Time.now)%> ago &nbsp; <img src="/images/reply.png" align="absmiddle" border="0" alt="回复 xi4oh4o" onclick="replyOne('xi4oh4o')" class="clickable" /><span class="ops"></span></small></strong> 
 													</div> 
 	                <div class="sep3"></div> 
 	                <strong><a href="<%=user_path(post.user)%>" class="dark"><%=h post.user.username%></a></strong> 
@@ -66,6 +67,7 @@
 
 	    </script> 
 	</div>
+		<%count = count+1%>
 		<%end%>
 
 	</div>
