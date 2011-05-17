@@ -58,7 +58,7 @@
 				<div class="sep3"></div>
 					<span class="bigger" style="font-size: 16px; line-height: 130%"><%=link_to topic.title, topic_path(topic)%></span>
 				<div class="sep5"></div>
-				<span class="created"><strong><a href="<%=node_path(topic.node)%>" class="node"><%=topic.node.title%></a> &nbsp;•&nbsp; </strong><a href="<%=user_path(topic.user)%>" class="dark"><%=h topic.user.username%></a></strong> &nbsp;•&nbsp;  <%=topic.body.jsize%> words &nbsp;•&nbsp; <%=topic.views%> Views <%if topic.posts.last %>&nbsp;•&nbsp; <%=h distance_of_time_in_words(topic.posts.last.created_at, Time.now)%> ago replied by <a href="<%=user_path(topic.posts.first.user)%>" class="dark"><%=h topic.posts.last.user.username%></a><%else%>&nbsp;•&nbsp; <%=h distance_of_time_in_words(topic.created_at, Time.now)%> ago<%end%></span>
+				<span class="created"><strong><a href="<%=node_path(topic.node)%>" class="node"><%=topic.node.title%></a> &nbsp;•&nbsp; </strong><a href="<%=user_path(topic.user)%>" class="dark"><%=h topic.user.username%></a></strong> &nbsp;•&nbsp;  <%=topic.body.jsize%> words &nbsp;•&nbsp; <%=topic.views%> Views <%if topic.posts.last %>&nbsp;•&nbsp; <%=h distance_of_time_in_words(topic.posts.last.created_at, Time.now)%> ago replied by <a href="<%=user_path(topic.posts.last.user)%>" class="dark"><%=h topic.posts.last.user.username%></a><%else%>&nbsp;•&nbsp; <%=h distance_of_time_in_words(topic.created_at, Time.now)%> ago<%end%></span>
 			</td>
 		</tr>
 	</table>

@@ -2,7 +2,7 @@ class NodesController < ApplicationController
   before_filter :authorize, :only => [:new]
   def show
     @node = Node.find(params[:id])
-    @topics = @node.topics.all(:include => :posts, :order => 'topics.created_at DESC,posts.created_at DESC')
+    @topics = @node.topics.all(:include => :posts).sort_by { |p| p.posts.last.nil? ? p.created_at: p.posts.last.created_at}.reverse
     @user = User.find_by_id(session[:user_id])
     @title = @node.title
   end
