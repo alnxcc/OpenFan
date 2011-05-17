@@ -26,6 +26,15 @@
 			<div class="inner">
 			</div>
 		</div>
+		 <div class="sep20"></div> 
+		            <div class="box"><div class="cell"><span class="fade">最热节点</span></div><div class="inner" align="left"><%@hotnodes.each do |hotnode|%><%=link_to hotnode.title, node_path(hotnode), :class=>"item_node"%><%end%></div></div> 
+		            <div class="sep20"></div> 
+		            <div class="box"> 
+		    <div class="cell"><div class="fr"><a href="/changes">全站最新更改记录</a></div> 
+		        <span class="fade">Newest Nodes</span> 
+		    </div> 
+		    <div class="inner"><%@nodes.reverse.each do |node|%><%=link_to(node.title, node_path(node), :class=>"item_node")%><%end%></div> 
+		</div>
 	</div>
 
 <div id="Content">
