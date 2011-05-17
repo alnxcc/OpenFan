@@ -27,7 +27,7 @@
 			</div>
 		</div>
 		 <div class="sep20"></div> 
-		            <div class="box"><div class="cell"><span class="fade">最热节点</span></div><div class="inner" align="left"><%@hotnodes.each do |hotnode|%><%=link_to hotnode.title, node_path(hotnode), :class=>"item_node"%><%end%></div></div> 
+		            <div class="box"><div class="cell"><span class="fade">Hot Nodes</span></div><div class="inner" align="left"><%@hotnodes.reverse.each do |hotnode|%><%=link_to hotnode.title, node_path(hotnode), :class=>"item_node"%><%end%></div></div> 
 		            <div class="sep20"></div> 
 		            <div class="box"> 
 		    <div class="cell"><div class="fr"><a href="/changes">全站最新更改记录</a></div> 
