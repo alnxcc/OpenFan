@@ -42,7 +42,9 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
-
+    @user.twitter = ''
+    @user.website = ''
+    @user.location = ''
     respond_to do |format|
       if @user.save
         flash[:notice] = 'User was successfully created.'
