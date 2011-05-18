@@ -31,5 +31,9 @@ class TopicsController < ApplicationController
     @topic.views = @topic.views + 1
     @topic.save
     #= @topic.posts.build
+    respond_to do |format|
+      format.html
+      format.iphone
+    end
   end
 end

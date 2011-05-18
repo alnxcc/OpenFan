@@ -1,0 +1,12 @@
+<div class="box">
+	<div class="cell" style="min-height: 73px;">
+		<div class="fr snow" style="padding-left: 10px; padding-bottom: 10px;"><a href="<%=user_path(@topic.user)%>"><img src="http://www.gravatar.com/avatar/<%=Digest::MD5.hexdigest(@topic.user.email)%>?s=50" border="0" /></a></div> 
+        <span class="bigger"><a href="/">OpenFan.net</a> <span class="chevron">&nbsp;›&nbsp;</span> <a href="<%=node_path(@topic.node)%>"><%=@topic.node.title%></a></span> 
+        <h1><%=@topic.title%></h1> 
+        <small class="fade">By <a href="<%=user_path(@topic.user)%>" class="dark"><%=@topic.user.username%></a> at <%=h distance_of_time_in_words(@topic.created_at, Time.now)%> ago, <%=@topic.views%> views</small><%=simple_format @topic.body%>
+	</div>
+	<div class="inner">
+		<div class="content topic_content"></div>
+	</div>
+	</div>
+	
