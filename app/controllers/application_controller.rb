@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  @user = User.new
   def set_iphone_format
     if is_iphone_request?
       request.format = :iphone

@@ -65,7 +65,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = 'User was successfully updated.'
+        flash[:reg_notice] = 'User was successfully updated.'
         format.html { redirect_to(@user) }
         format.xml  { head :ok }
       else
@@ -88,6 +88,11 @@ class UsersController < ApplicationController
   end
   
   def login
+    if(session[:user_id])
+      @user = User.find_by_id(session[:user_id])
+    else
+      @user = User.new
+    end
     @title = "Login"
     if request.post?
       user = User.authenticate(params[:username], params[:password])
@@ -100,7 +105,8 @@ class UsersController < ApplicationController
         
         redirect_to(uri || {:controller => "home", :action => "index"})
       else
-        flash.now[:notice] = "Invalid user/password!"
+        #redirect_to(request.request_uri)
+        flash.now[:login_notice] = "Invalid user/password!"
       end
     end
   end
