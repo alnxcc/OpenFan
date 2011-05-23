@@ -1,7 +1,7 @@
  <div class="title"> 
  	<!-- TODO: make 'post' variable for 'article' based on category --> 
-    <span class="lipsum">Most recently, <%=h @topics.last.user.username%> wrote</span> 
-	<h2><%=link_to @topics.last.title, @topics.last, :title=> @topics.last.title, :ref=>'bookmark'%></h2> 
+    <span class="lipsum">Most recently, <%=h @topics.first.user.username%> wrote</span> 
+	<h2><%=link_to @topics.first.title, @topics.first, :title=> @topics.first.title, :ref=>'bookmark'%></h2> 
  </div> 
 
 	<div id="articles"> 
