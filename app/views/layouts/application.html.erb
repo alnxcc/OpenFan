@@ -1,40 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>OpenFan</title>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="stylesheets/main.css">
-	</head>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"> 
+ 
+<head profile="http://gmpg.org/xfn/11"> 
+ 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 	
-	<body>
-		<header>
-			<div class="top-nav">
-				<div class="top-nav-info">
-					<ul>
-						<li><a href="#">fanminjian</a></li>
-						<li><a href="#">Logout</li>
-					</ul>
-				</div>
-
-				<div class="top-nav-items">
-					<ul>
-						<li><a href="#">OpenFan.net</a></li>
-					</ul>
-				</div>
-			</div>
-		</header>
-		<%=yield%>
-		<footer>
-			<div class="bottom-nav">
-				<div class="bottom-nav-items">
-					<ul>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Home</a></li>
-
-					</ul>
-				</div>
-				<div class="bottom-nav-copyright">&copy; 2011 OpenFan.net. All rights reserved.</div>
-			</div>
-		</footer>
-	</body>
+	<link rel="shortcut icon" href="/wp-content/themes/astheria/images/favicon.ico" /> 
+	
+	<title>OpenFan</title> 
+ 
+	<link rel="stylesheet" href="/stylesheets/style.css" type="text/css" media="screen" /> 
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/astheria" /> 
+	<link rel="pingback" href="http://astheria.com/xmlrpc.php" /> 
+	<script type='text/javascript' src='http://astheria.com/wp-includes/js/jquery/jquery.js?ver=1.4.2'></script> 
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://astheria.com/xmlrpc.php?rsd" /> 
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://astheria.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Astheria' href='http://astheria.com' /> 
+ 
+<!-- All in One SEO Pack 1.6.12.1 by Michael Torbert of Semper Fi Web Design[360,377] --> 
+<meta name="description" content="Design blog of Kyle Meyer, a Minneapolis based interactive designer." /> 
+<meta name="keywords" content="kyle,meyer,design,typography,portfolio,interactive,interface" /> 
+<!-- /all in one seo pack --> 
+<link rel="stylesheet" href="http://astheria.com/wp-content/plugins/contact-form-7/stylesheet.css" type="text/css" /><script type='text/javascript' src='http://astheria.com/wp-content/plugins/contact-form-7/contact-form-7.js'></script> 
+	
+	<script src="/mint/?js" type="text/javascript"></script> 
+</head> 
+ 
+<body id="index"> 
+ 
+	<div id="wrapper"> 
+		<div id="masthead"> 
+			<br /> 
+			<span id="logo"><a title="Back to the home page" href="http://openfan.net/">OpenFan.net</a></span> 
+			
+			<ol id="nav"> 
+	    		<li><a href="/archives/">Archives</a></li> 
+	    		<li><a href="/about/">About</a></li> 
+	    		<li class="last"><a href="mailto:fanminjian@gmail.com?subject=OpenFan%20Inquiry">Contact</a></li> 
+	    	</ol> 
+	    	
+	    	<div class="clear"></div> 
+	    </div> 
+ 
+<%=yield%>
+	
+<div id="footer"> 
+	<div id="footerabout"> 
+		
+		<h1>Kyle Meyer is an interactive designer in Minneapolis, Minnesota.</h1> 
+	
+   	<p><a href="http://feeds.feedburner.com/astheria" class="icon subscribe">Subscribe</a><br /><a class="icon twitter" href="http://twitter.com/kylemeyer">Follow on Twitter</a></p> 
+	</div>	
+ 
+	<div class="clear"></div> 
+	</div> <!--/wrapper--> 
 </html>

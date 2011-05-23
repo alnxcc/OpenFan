@@ -1,34 +1,31 @@
-<div id="container">
-	<div id="sidebar">
-		<h2>Status</h2>
-		<div>
-		<span class="status"><%=@users.count%></span>
-		<span class="title">Users</span>
-		<span class="status"><%=@topics.count%></span>
-		<span class="title">Topics</span>
-		<span class="status"><%=@posts.count%></span>
-		<span class="title">Posts</span>
+ <div class="title"> 
+ 	<!-- TODO: make 'post' variable for 'article' based on category --> 
+    <span class="lipsum">Most recently, <%=h @topics.last.user.username%> wrote</span> 
+	<h2><%=link_to @topics.last.title, @topics.last, :title=> @topics.last.title, :ref=>'bookmark'%></h2> 
+ </div> 
+
+	<div id="articles"> 
+
+	<h6>Articles</h6> 
+ 		<%@topics.each do |t|%>
+		<div class="post" id="<%=t.id%>"> 
+			<h2><%=link_to t.title, t, :title=> t.title, :ref=>'bookmark'%></h2> 
+			<p><%=h t.body%></p> 
 		</div>
-		<div style="height:10px;clear:both"></div>
-		<h2>New Nodes</h2>
-		<p>
-			<%@nodes.each do |node|%>
-			<%= link_to node.title, node, :class=>'node'%>
-			<%end%>
-		</p>
-		
-		<h2>Hot Nodes</h2>
-		<p>
-			<%@hotnodes.each do |n|%>
-			<%= link_to n.title, n, :class=>'node'%>
-			<%end%>
-		</p>
-	</div>
-	<div id="content">
-		<ul>
-			<%@topics.each do |t|%>
-			<li><img class="avartar" style=" float: right;"src="http://www.gravatar.com/avatar/4f2b95302b5ef9755375c95309698386?s=48"><span class="topic-title"><%= link_to t.title,t%></span><br /><p class="topic-info">by <%=t.user.username%> <%=h distance_of_time_in_words(t.created_at, Time.now)%> ago</p></li>
-			<%end%>
-		</ul>
-	</div>
-</div>
+		<%end%>
+	</div> 
+<div id="posts"> 
+
+	<h6>Posts</h6> 
+	
+	
+			
+		 <%@posts.each do |p|%>						
+		<div class="post" id="<%=p.id%>"> 
+			<h2><%=link_to p.topic.title, p.topic, :title=> p.topic, :ref=>'bookmark'%></h2> 
+			<p><%= simple_format p.body%></p> 
+		</div> 
+		<%end%>
+</div> 
+
+<div class="clear"></div>

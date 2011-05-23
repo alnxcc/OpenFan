@@ -1,0 +1,776 @@
+/*  
+Theme Name: Astheria v2
+Theme URI: http://astheria.com
+Description: Custom theme for Astheria.com version 2
+Version: 2.0
+Author: Kyle Meyer
+Author URI: http://astheria.com.com
+*/
+
+/* Old Magenta: #ff005a */
+/* New blue: #61CDF5 */
+/* Old blue: #80c8e5 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, font, img, ins, kbd, q, s, samp,
+small, strike, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	font-family: sans-serif;
+	text-rendering: optimizeLegibility;
+	color: #666;
+	background: #fff url(/images/bg.gif) 890px 0 repeat-y;
+	font-size: 87.5%;
+}
+
+html > body {
+	font-size: 14px;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #61CDF5;
+}
+
+ol, ul {
+	margin-bottom: 1.5em;
+}
+
+ul {
+	list-style-type: square;
+}
+
+li {
+	padding-bottom: 0.25em;
+	font-size: 11px;
+	line-height: 16px;
+}
+
+p {
+	margin: 0 0 20px;
+	line-height: 21px;
+	font-size: 13px;
+}
+
+code, pre {
+	font-family: Monaco, Courier;
+	color: #555;
+	font-size: 0.9em;
+}
+
+pre {
+	overflow-x: auto;
+	font-size: 0.75em;
+	padding:12px;background:#f6f6f6;color:#777;margin:0 0 1.5em;
+	border: 0;
+}
+
+em, i {
+	font-style: italic;
+}
+
+strong, b {
+	font-family: sans-serif;
+}
+
+blockquote {
+	border-left: 1px solid #dedede;
+	color: #555;
+	font-size: 14px;
+	font-family: Georgia, serif;
+	text-shadow: rgba(255, 255, 255, 0.007) 0px -1px 1px;
+	background: #f8f8f8;
+	padding: 8px 8px 8px 20px;	
+	margin: 0 0 1em;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+.single .post blockquote p {
+	font-size: 14px;
+	line-height: 1.5em;
+	width: 467px;
+	margin-left: 0;
+}
+
+.single .post blockquote.pullquote {
+	float: left;
+	width: 478px;
+	margin: 0.25em 20px 0.25em 0;
+	padding: 0.5em 10px;
+	border: none;
+	color: #aaa;
+	background: #fff;
+	border-top: 1px solid #e8e8e8;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.single .post blockquote.pullquote p {
+	font-size: 20px;
+	width: 458px;
+	margin-left: 0;
+}
+
+.single .post blockquote.pullquote p:last-child {
+	margin-bottom: 0;
+}
+
+#index .post p {
+	margin: 0;
+}
+
+.single .post p a,
+span.commentmetadata a,
+.single .post li a,
+.single .post .comment li a,
+#index .post p a {
+	text-decoration: underline;
+}
+
+.single .post p a:hover,
+span.commentmetadata a:hover,
+.single .post li a:hover,
+.single .post .comment li a:hover,
+#index .post p a:hover {
+	text-decoration: none;
+}
+
+/*Headlines */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+.single .post h3 {
+	font-family: sans-serif;
+}
+
+h1,
+#index .title h2 {
+	font-size: 4.1em;
+	line-height: 1em;
+	color: #555555;
+	padding: 0 0.1em 0 0;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	letter-spacing: -0.03em;
+}
+
+#index .title .lipsum {
+	font-size: 4.1em;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+h1 a,
+h1 a:visited,
+h1 a:hover,
+#index .title h2 a,
+#index .title h2 a:visited,
+#index .title h2 a:hover {
+	color: #555555;
+}
+
+.single #footerabout h1, #index h1, p.about {
+	font-size: 11px;
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+	letter-spacing: 0;
+	display: block;
+	width: 371px;
+	color: #454545;
+}
+
+#index h2 {
+	padding: 0;
+	font-size: 16px;
+	line-height: 21px;
+}
+
+h3 {
+	border-bottom: 1px solid #e8e8e8;
+	color: #61CDF5;
+	font-size: 16px;
+	line-height: 28px;
+	margin-bottom: 10px;
+	font-weight: normal;
+}
+
+h4, h5 {
+	font-size: 1.4em;
+	margin: 0.5em 0;
+}
+
+h6 {
+	color: #61CDF5;
+	font-weight: bold;
+	font-family: sans-serif;
+	font-size: 9px;
+	line-height: 30px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #e8e8e8;
+	margin-bottom: 1.5em;
+	letter-spacing: 2px;
+}
+
+hr {
+	border: 0;
+	height: 0;
+	line-height: 0;
+	background: none;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+/* Layout */
+#wrapper {
+	width: 762px;
+	margin: 0;
+	padding: 0 0 0 60px;
+}
+
+#masthead {
+	margin: 0 0 3em;
+}
+
+#logo {
+	float: left;
+	width: 371px;
+	height: 40px;
+	padding-top:14px;
+	line-height: 40px;
+}
+
+#logo a {
+	text-indent: -9000px;
+	height: 16px;
+	width: 75px;
+	display: block;
+	background: url(/images/logo_blue.gif) 0 0 no-repeat;
+}
+
+#logo a:hover {
+	background-position: 0 100%;
+}
+
+.single #logo {
+	width: 254px;
+}
+
+#nav {
+	list-style:none;
+	margin: 0;
+	width: 371px;
+	float: right;
+	height: 40px;
+	font-family: sans-serif;
+	line-height: 40px;
+	/*background: url(images/grey_bar.gif) 0 0 no-repeat;*/
+}
+
+.single #nav {
+	width: 508px;
+}
+
+#nav li {
+	padding: 0;
+	margin: 0;
+	line-height: 40px;
+	padding-top: 5px;
+	display: block;
+	width: 127px;
+	float: left;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+#nav li.last {
+	width: 117px;
+}
+
+#nav li a {
+	padding: 4px 0;
+	font-size: 9px;
+	font-weight: bold;
+	color: #777;
+}
+
+#nav li a:hover {
+	color: #61CDF5;
+}
+
+#articles {
+	float: left;
+	width: 361px;
+	padding-right: 10px;
+}
+
+#posts {
+	float: right;
+	width: 371px;
+}
+
+.post {
+	margin: 0 0 1.5em 0;
+}
+
+#index .post {
+	padding: 1em 0;
+	margin: 0 0 0.5em 0;
+	height: 70px;
+}
+
+
+.single .post ol,
+.single .post ul {
+	margin-left: 284px;
+	width: 470px;
+}
+
+.single .post p,
+.single .post blockquote,
+.single .post h3,
+.single .post .title,
+.single .post .next_action,
+.single .post .figure,
+.single .post #commentform,
+.single .post .wpcf7,
+.single .post ol.commentlist {
+	width: 508px;
+	margin-left: 254px;
+}
+
+.single .post blockquote {
+	width: 480px;
+}
+
+.single .post .actions {
+	width: 244px;
+	float: left;
+}
+
+.single .post .related {
+	float: right;
+	width: 244px;
+}
+
+.single .post .next_action li,
+.single .post .next_action ul {
+	width: 244px;
+}
+
+.single .post .next_action li {
+	padding-bottom: 0.35em;
+}
+
+.single .post .next_action a {
+	text-decoration: none;
+}
+
+.single .post .related a {
+	font-size: 11px;	
+}
+
+.single .post .related a:hover,
+.single .post .actions a:hover {
+	text-decoration: none;
+}
+
+.single .post .next_action {
+	margin: 50px 0 0 254px;
+}
+
+.single .post .next_action ul {
+	list-style: none;
+	margin: 0;
+}
+
+.single .post .next_action li {
+	line-height: 16px;
+}
+
+#footer {
+	padding-top: 1em;
+	margin-top: 3.5em;
+	border-top: 1px solid #e8e8e8;
+	clear: both;
+}
+
+#footerabout {
+	width: 371px;
+	float: left;
+	padding-bottom: 21px;
+}
+
+#footer p, #footer h1 {
+	line-height: 24px;
+}
+
+/* Comments and Commentform */
+ol.commentlist {
+	list-style: none;
+}
+
+ol.commentlist li {
+	padding: 0 0 30px;
+}
+
+.commentmetadata {
+	display: block;
+	float: left;
+	line-height: 1.7;
+	font-size: 9px;
+	width: 107px;
+	padding: 17px 10px 0 0;
+	border-top: 1px solid #ccc;
+	color: #aaa;
+}
+
+.commentmetadata cite {
+	display: block;
+	color: #999;
+	font-size: 11px;
+	font-weight: bold;
+	margin-bottom: 1px;
+}
+
+.commentmetadata .avatar {
+	display: block;
+	margin-top: 9px;
+	margin-bottom: 1.5em;
+}
+
+.comment {
+	width: 381px;
+	float: right;
+	display: block;
+	padding: 1.5em 0 0;
+	padding-left: 10px;
+	border-top: 1px solid #e8e8e8;
+}
+
+.single .post .comment p,
+.single .post .comment li,
+.single .post .comment blockquote {
+	width: 381px;
+	font-size: 13px;
+	line-height: 20px;
+	margin-left: 0;
+}
+
+.single .post .comment blockquote {
+	padding:12px;background:#f6f6f6;color:#777;margin:0 0 1.5em;
+	border: 0;
+}
+
+.single .post .comment blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+.single .post .comment blockquote p {
+	font-size: 12px;
+}
+
+.single .post .comment em {
+	background: none;
+}
+
+.single .post .comment blockquote,
+.single .post .comment blockquote p {
+	width: 356px;
+}
+
+ol.commentlist li.author_comment {
+
+}
+
+.single .post #commentform, .single .post .wpcf7-form {
+	width: 500px;
+	padding: 4px 3px 4px;
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
+#commentform p, .single .post .wpcf7-form p {
+	margin: 0 0 10px 0;
+	width: 502px;
+	clear: both;
+}
+
+#commentform p.subscribe-to-comments {
+	margin-left: 127px;
+	width: 300px;
+}
+
+#commentform p.subscribe-to-comments label {
+	width: 300px;
+	float: none;
+}
+
+#commentform .text, .wpcf7-form .text {
+	width: 246px;
+}
+
+#commentform textarea, .wpcf7-form textarea {
+	width: 367px;
+	line-height: 1.5em;
+}
+
+#commentform label, .wpcf7-form label {
+	font-size: 11px;
+	width: 107px;
+	float: left;
+	margin-right: 20px;
+}
+
+#commentform .text,
+#commentform textarea,
+.wpcf7-form textarea,
+.wpcf7-form .text {
+	border: 1px solid #ddd;
+	padding: 4px 3px 3px;
+	font-family: sans-serif;
+	font-size: 12px;
+	color: #555;
+}
+
+form small {
+	font-size: 0.9em;
+	color: #999;
+}
+
+form .button {
+	margin-left: 127px;
+}
+
+small.instructional {
+	display: block;
+}
+
+/* Archives */
+.archives {
+	color: #61CDF5;
+}
+
+.archives:hover {
+	color: #000;
+}
+
+.archives_list {
+	list-style: none;
+	border-left: 4px solid #cacaca;
+}
+
+.archives_list li {
+	background: url(images/marker.gif) 0 0 no-repeat;
+	padding-left: 16px;
+	clear:left;
+}
+
+.archives_list li span.date {
+	font-size: 9px;
+	color: #888;
+	width: 99px;
+	display: block;
+	float: left;
+	line-height: 13px;
+}
+
+.archives_list li sup {
+	color: #bbb;
+	font-size: 8px;
+	padding-left: 1px;
+}
+
+.archives_list li a {
+	text-decoration: none!important;
+	line-height: 13px;
+}
+
+/* Classes */
+.title {
+	margin: 4em 0 2em;
+	padding: 0 0 20px;
+	display: block;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.single .title {
+	margin: 4em 0 1em;
+}
+
+#commentform .title {
+	margin-left: 0;
+	margin-top: 0;
+}
+
+.single .post .title p a {
+	text-decoration: none;
+}
+
+.single .post .title p {
+	margin-left: 0;
+	margin-bottom: 0;
+}
+
+.title p {
+	font-size: 4.4em;
+	line-height: 0.98em;
+	color: #444;
+	padding: 0 0.25em 0 0;
+	font-weight: bold;
+	letter-spacing: -0.03em;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+small.date {
+	font-size: 11px;
+	float: right;
+	display: block;
+	margin-top: -20px;
+	width: 117px;
+	letter-spacing: 0;
+	color: #ccc;
+}
+
+#responses {
+	margin-top: 3em;
+}
+
+.lipsum {
+	font-size: 4.4em;
+	line-height: 1em;
+	color: #61CDF5 ;
+	letter-spacing: -0.05em;
+	padding-top: 12px;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.single .post .figure {
+	width: 468px;
+	padding: 3px 3px 4px;
+	background: #e8e8e8;
+	margin-bottom: 1.5em;
+	border: 1px solid #ddd;
+}
+
+.single .post .large {
+	width: 502px!important;
+}
+
+.figure img {
+	border: 1px solid #ddd;
+}
+
+.figure small {
+	padding: 4px 3px 0;
+	display: block;
+	font-weight: bold;
+	line-height: 150%;
+	margin: 0;
+	font-family: "Lucida Grande", sans-serif;
+	font-size: 9px;
+}
+
+.clear {
+	clear: both;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.icon {
+	padding: 3px 0 3px 16px;
+	font-size: 11px;
+}
+
+.subscribe {
+	background: url(images/icons/rss_blue.gif) 0 50% no-repeat;
+}
+
+.leave_comment {
+	background: url(images/icons/comment_blue.gif) 0 50% no-repeat;
+}
+
+.twitter {
+	background: url(images/icons/twitter_blue.gif) 0 50% no-repeat;
+}
+
+.wpcf7-response-output {
+	width: 495px;
+	font-size: 11px;
+	padding: 2px 5px;
+}
+
+.wpcf7-validation-errors {
+	background: #ffa;
+	color: #676718;
+	border: 1px solid #ff0!important;
+}
+
+.wpcf7-mail-sent-ok {
+	background: #afa;
+	border: 1px solid #0f0!important;
+	color: #093c07;
+}
+
+.wpcf7-not-valid-tip {
+	font-size: 11px!important;
+	background: #faa!important;
+	padding: 1px 5px!important;
+	color: #540e0e!important;
+	border: 1px solid #ff4e4e!important;
+}
+
+.single p.nocomments {
+	margin-top: 75px;
+	margin-bottom: 75px;
+}
+
+.single p.nocomments, .single .post p.old_content, .single ol.commentlist li.author_comment span.author_note {
+	font-size: 11px;
+	width: 495px;
+	background: #ffffcb;
+	padding: 2px 5px;
+	color: #676718;
+	border: 1px solid #ff0;
+}
+
+.single ol.commentlist li.author_comment span.author_note {
+ 	width: auto;
+}
+
+.single .post p.footnote {
+	font-size: 0.8em;
+}
+
+.single .post h3.archive_year {
+	border: none;
+	color: #61CDF5;
+}
