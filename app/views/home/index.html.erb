@@ -7,7 +7,8 @@
 	<div id="articles"> 
 
 	<h6>Articles</h6> 
- 		<%@topics.each do |t|%>
+ 		<%@topics.each_with_index do |t, i|%>
+		<%break if i == 5%>
 		<div class="post" id="<%=t.id%>"> 
 			<h2><%=link_to t.title, t, :title=> t.title, :ref=>'bookmark'%></h2> 
 			<p><%=h t.body%></p> 
@@ -20,9 +21,10 @@
 	
 	
 			
-		 <%@posts.each do |p|%>						
+		 <%@posts.each_with_index do |p,i|%>
+		<%break if i == 5%>						
 		<div class="post" id="<%=p.id%>"> 
-			<h2><%=link_to p.topic.title, p.topic, :title=> p.topic, :ref=>'bookmark'%></h2> 
+			<h2><%=link_to p.topic.title, p.topic, :title=> p.topic.title, :ref=>'bookmark'%></h2> 
 			<p><%= simple_format p.body%></p> 
 		</div> 
 		<%end%>
