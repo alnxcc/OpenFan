@@ -6,8 +6,8 @@ class HomeController < ApplicationController
 
     @users = User.all
     #@topics = Topic.all(:include => :posts, :order => 'topics.created_at DESC,posts.created_at DESC')
-    @topics = Topic.all(:include => :posts).sort_by { |p| p.posts.last.nil? ? p.created_at: p.posts.last.created_at}.reverse
-    @posts = Post.all.reverse
+    @topics = Topic.all(:include => :posts).sort_by { |p| p.posts.last.nil? ? p.created_at: p.posts.last.created_at}.take(5).reverse
+    @posts = Post.all.take(5).reverse
     @title="Home"
     respond_to do |format|
       format.html # index.html.erb
